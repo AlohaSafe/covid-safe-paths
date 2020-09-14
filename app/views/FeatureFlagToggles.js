@@ -31,6 +31,9 @@ const flagToName = (flag) => {
       return 'Bypass Export API Check';
     case FeatureFlagOption.MOCK_EXPOSURE:
       return 'Exposure Mode';
+////// ALOHA SAFE STORY EDITS //////
+      case FeatureFlagOption.SANDBOX_HA:
+      return 'Use Sandbox HA'
     // For development ease:
     default:
       return flag;
