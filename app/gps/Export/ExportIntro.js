@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 
 import getHealthcareAuthorities from '../../store/actions/healthcareAuthorities/getHealthcareAuthoritiesAction';
-import healthcareAuthorityOptionsSelector from '../../store/selectors/healthcareAuthorityOptionsSelector';
+import selectedHealthcareAuthoritiesSelector from '../../store/selectors/selectedHealthcareAuthoritiesSelector';
 import ExportTemplate from './ExportTemplate';
 import { Screens } from '../../navigation';
 
@@ -19,7 +19,7 @@ export const ExportIntro = () => {
     dispatch(getHealthcareAuthorities());
   }, [dispatch]);
 
-  const authorities = useSelector(healthcareAuthorityOptionsSelector);
+  const authorities = useSelector(selectedHealthcareAuthoritiesSelector);
   const selectedAuthorityDummy = authorities[0];
 
   const onNext = () =>

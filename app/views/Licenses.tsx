@@ -19,7 +19,7 @@ import { Colors, Spacing } from '../styles';
 import { useSelector } from 'react-redux';
 import getConfigurationApi from '../api/healthcareAuthorities/getConfigurationApi';
 
-import healthcareAuthorityOptionsSelector from '../store/selectors/healthcareAuthorityOptionsSelector';
+import selectedHealthcareAuthoritiesSelector from '../store/selectors/selectedHealthcareAuthoritiesSelector';
 
 export const LicensesScreen = (): JSX.Element => {
   const { t } = useTranslation();
@@ -41,7 +41,7 @@ export const LicensesScreen = (): JSX.Element => {
     getConfigurationApi(selectedAuthority).then(config => privacyPolicyUrl = config.privacyPolicyUrl);
   });
 
-  const authorities = useSelector(healthcareAuthorityOptionsSelector);
+  const authorities = useSelector(selectedHealthcareAuthoritiesSelector);
   const selectedAuthority = authorities[0];
 
   // Fetch here to ensure we show the up to date privacy policy

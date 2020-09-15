@@ -24,7 +24,7 @@ import { FeatureFlagOption } from '../../store/types';
 import { useDispatch, useSelector } from 'react-redux';
 
 import getHealthcareAuthorities from '../../store/actions/healthcareAuthorities/getHealthcareAuthoritiesAction';
-import healthcareAuthorityOptionsSelector from '../../store/selectors/healthcareAuthorityOptionsSelector';
+import selectedHealthcareAuthoritiesSelector from '../../store/selectors/selectedHealthcareAuthoritiesSelector';
 
 const CODE_LENGTH = 6;
 
@@ -135,7 +135,7 @@ export const ExportSelectHA = ({ route, navigation }) => {
     dispatch(getHealthcareAuthorities());
   }, [dispatch]);
 
-  const authorities = useSelector(healthcareAuthorityOptionsSelector);
+  const authorities = useSelector(selectedHealthcareAuthoritiesSelector);
   const selectedAuthority = authorities[0];
 
   const navigateToNextScreen = () => {
