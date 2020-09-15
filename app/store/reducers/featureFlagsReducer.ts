@@ -12,7 +12,7 @@ const AllFlagsOff: Record<FeatureFlagOption, boolean> = {
   [FeatureFlagOption.DEV_LANGUAGES]: false,
   [FeatureFlagOption.BYPASS_EXPORT_API]: false,
   [FeatureFlagOption.MOCK_EXPOSURE]: false,
-////// ALOHA SAFE STORY EDITS //////
+  ////// ALOHA SAFE STORY EDITS //////
   [FeatureFlagOption.SANDBOX_HA]: false,
 };
 

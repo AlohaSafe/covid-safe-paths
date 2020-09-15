@@ -38,7 +38,9 @@ export const LicensesScreen = (): JSX.Element => {
 
   let privacyPolicyUrl = '';
   useEffect(() => {
-    getConfigurationApi(selectedAuthority).then(config => privacyPolicyUrl = config.privacyPolicyUrl);
+    getConfigurationApi(selectedAuthority).then(
+      (config) => (privacyPolicyUrl = config.privacyPolicyUrl),
+    );
   });
 
   const authorities = useSelector(selectedHealthcareAuthoritiesSelector);
@@ -81,9 +83,7 @@ export const LicensesScreen = (): JSX.Element => {
           </View>
         </View>
       </ScrollView>
-      <TouchableOpacity
-        style={styles.termsInfoRow}
-        onPress={onPressLink()}>
+      <TouchableOpacity style={styles.termsInfoRow} onPress={onPressLink()}>
         <Typography style={{ color: Colors.white }} use='body1'>
           {t('label.privacy_policy')}
         </Typography>

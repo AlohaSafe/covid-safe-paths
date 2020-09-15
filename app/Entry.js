@@ -274,7 +274,7 @@ export const Entry = () => {
   if (!hdohSelected) {
     dispatch(autoSelectHdohAction());
   }
-  
+
   if (sandboxHealthAuthority) {
     dispatch(toggleSandboxHealthcareAuthorityAction());
   } else {

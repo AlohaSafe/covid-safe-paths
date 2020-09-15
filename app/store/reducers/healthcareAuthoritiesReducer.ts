@@ -83,24 +83,18 @@ const healthcareAuthoritiesReducer = createReducer(initialState, (builder) =>
       state.request.errorMessage = error.message;
     })
     ////// ALOHA SAFE STORY EDITS //////
-    .addCase(
-      autoSelectHdohAction,
-      (state) => {
-        // Sets selected authorities array to first index of available HAs
-        // WARNING: Assumes "Hawaii" is in the array
-        state.selectedAuthorities = state.availableAuthorities.filter(
-          ({ internal_id }) => internal_id.indexOf('sandbox') === -1,
-        );
-      },
-    )
-    .addCase(
-      toggleSandboxHealthcareAuthorityAction,
-      (state) => {
-        state.selectedAuthorities = state.availableAuthorities.filter(
-          ({ internal_id }) => internal_id.indexOf('sandbox') !== -1,
-        );
-      }
-    )
+    .addCase(autoSelectHdohAction, (state) => {
+      // Sets selected authorities array to first index of available HAs
+      // WARNING: Assumes "Hawaii" is in the array
+      state.selectedAuthorities = state.availableAuthorities.filter(
+        ({ internal_id }) => internal_id.indexOf('sandbox') === -1,
+      );
+    })
+    .addCase(toggleSandboxHealthcareAuthorityAction, (state) => {
+      state.selectedAuthorities = state.availableAuthorities.filter(
+        ({ internal_id }) => internal_id.indexOf('sandbox') !== -1,
+      );
+    })
     ////// ALOHA SAFE STORY EDITS //////
     .addCase(
       toggleSelectedHealthcareAuthorityAction,
