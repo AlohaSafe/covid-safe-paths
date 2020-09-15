@@ -12,6 +12,7 @@ import toggleAutoSubscriptionBannerAction from '../actions/healthcareAuthorities
 
 ////// ALOHA SAFE STORY EDITS //////
 import autoSelectHdohAction from '../actions/healthcareAuthorities/autoSelectHdohAction';
+import toggleSandboxHealthcareAuthorityAction from '../actions/healthcareAuthorities/toggleSandboxHealthcareAuthorityAction';
 ////// ALOHA SAFE STORY EDITS //////
 
 type HealthCareReducerState = {
@@ -84,11 +85,21 @@ const healthcareAuthoritiesReducer = createReducer(initialState, (builder) =>
     ////// ALOHA SAFE STORY EDITS //////
     .addCase(
       autoSelectHdohAction,
-      (state, { payload: { healthcareAuthorities } }) => {
-        // Sets selected authorities array to the fetched authorities array.
-        // CAUTION: Does not check against current state array. Assuming on one Hawaii Dept. of Health object.
-        state.selectedAuthorities = healthcareAuthorities;
+      (state) => {
+        // Sets selected authorities array to first index of available HAs
+        // WARNING: Assumes "Hawaii" is in the array
+        state.selectedAuthorities = state.availableAuthorities.filter(
+          ({ internal_id }) => internal_id.indexOf('sandbox') === -1,
+        );
       },
+    )
+    .addCase(
+      toggleSandboxHealthcareAuthorityAction,
+      (state) => {
+        state.selectedAuthorities = state.availableAuthorities.filter(
+          ({ internal_id }) => internal_id.indexOf('sandbox') !== -1,
+        );
+      }
     )
     ////// ALOHA SAFE STORY EDITS //////
     .addCase(
