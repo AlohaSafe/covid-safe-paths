@@ -1,5 +1,5 @@
 "NSHumanReadableCopyright" = "Copyright © 2020 Path Check Inc. All rights reserved.";
-"NSLocationAlwaysAndWhenInUseUsageDescription" = "Your location history will be saved on your device, and only shared with others if you choose to do so.";
-"NSLocationAlwaysUsageDescription" = "Your location history will be saved on your device, and only shared with others if you choose to do so.";
-"NSLocationWhenInUseUsageDescription" = "Your location history will be saved on your device, and only shared with others if you choose to do so.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Your location data is stored on your device so that you can more accurately share with contact tracers if you test positive for Covid-19.";
+"NSLocationAlwaysUsageDescription" = "Your location data is stored on your device so that you can more accurately share with contact tracers if you test positive for Covid-19.";
+"NSLocationWhenInUseUsageDescription" = "Your location data is stored on your device so that you can more accurately share with contact tracers if you test positive for Covid-19.";
 "NSMotionUsageDescription" = "We use your accelerometer for accurate location history.";
