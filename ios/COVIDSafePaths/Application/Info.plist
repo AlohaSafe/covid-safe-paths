@@ -48,7 +48,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Your location data is stored on your device so that you can more accurately share with contact tracers if you test positive for Covid-19.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Your location history will be saved on your device, and only shared with others if you choose to do so.</string>
+	<string>Your location data is stored on your device so that you can more accurately share with contact tracers if you test positive for Covid-19.</string>
 	<key>NSMainNibFile</key>
 	<string>LaunchScreen</string>
 	<key>NSMotionUsageDescription</key>
