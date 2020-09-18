@@ -24,11 +24,10 @@ import { Colors, Spacing } from '../../styles';
 //   navigation: NavigationProp;
 // };
 
-export const AllServicesOnScreen = (
-//   {
+export const AllServicesOnScreen = (): //   {
 //   navigation,
 // }: AllServicesOnProps
-): JSX.Element => {
+JSX.Element => {
   const size = Dimensions.get('window').height;
   const { t } = useTranslation();
 
