@@ -4,7 +4,7 @@ import {
   ImageBackground,
   StatusBar,
   View,
-  TouchableOpacity,
+  // TouchableOpacity,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Pulse from 'react-native-pulse';
@@ -15,39 +15,41 @@ import { Typography } from '../../components/Typography';
 
 import { styles } from './style';
 import { Colors, Spacing } from '../../styles';
-import { Stacks, NavigationProp } from '../../navigation';
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store/types';
-import toggleAutoSubscriptionBanner from '../../store/actions/healthcareAuthorities/toggleAutoSubscriptionBannerAction';
+// import { Stacks, NavigationProp } from '../../navigation';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { RootState } from '../../store/types';
+// import toggleAutoSubscriptionBanner from '../../store/actions/healthcareAuthorities/toggleAutoSubscriptionBannerAction';
 
-type AllServicesOnProps = {
-  navigation: NavigationProp;
-};
+// type AllServicesOnProps = {
+//   navigation: NavigationProp;
+// };
 
-export const AllServicesOnScreen = ({
-  navigation,
-}: AllServicesOnProps): JSX.Element => {
+export const AllServicesOnScreen = (
+//   {
+//   navigation,
+// }: AllServicesOnProps
+): JSX.Element => {
   const size = Dimensions.get('window').height;
   const { t } = useTranslation();
 
-  const { autoSubscription } = useSelector(
-    (state: RootState) => state.healthcareAuthorities,
-  );
+  // const { autoSubscription } = useSelector(
+  //   (state: RootState) => state.healthcareAuthorities,
+  // );
 
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const listener = navigation.addListener('blur', () => {
-      if (
-        !autoSubscription.bannerDismissed &&
-        autoSubscription.selectedAuthority
-      ) {
-        dispatch(toggleAutoSubscriptionBanner({ overrideValue: false }));
-      }
-    });
-    return listener.remove;
-  }, [navigation, dispatch, autoSubscription]);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   const listener = navigation.addListener('blur', () => {
+  //     if (
+  //       !autoSubscription.bannerDismissed &&
+  //       autoSubscription.selectedAuthority
+  //     ) {
+  //       dispatch(toggleAutoSubscriptionBanner({ overrideValue: false }));
+  //     }
+  //   });
+  //   return listener.remove;
+  // }, [navigation, dispatch, autoSubscription]);
 
-  const { bannerDismissed, selectedAuthority } = autoSubscription;
+  // const { bannerDismissed, selectedAuthority } = autoSubscription;
 
   return (
     <View style={{ flex: 1 }}>
@@ -97,7 +99,7 @@ export const AllServicesOnScreen = ({
         </View>
       </View>
 
-      {!bannerDismissed && !!selectedAuthority && (
+      {/* {!bannerDismissed && !!selectedAuthority && (
         <TouchableOpacity
           style={styles.bottomSheet}
           onPress={() => navigation.navigate(Stacks.Partners)}>
@@ -118,7 +120,7 @@ export const AllServicesOnScreen = ({
           </View>
           <SvgXml xml={Icons.ChevronRight} />
         </TouchableOpacity>
-      )}
+      )} */}
     </View>
   );
 };

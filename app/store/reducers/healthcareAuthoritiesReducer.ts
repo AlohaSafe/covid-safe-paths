@@ -114,7 +114,7 @@ const healthcareAuthoritiesReducer = createReducer(initialState, (builder) =>
 
         // Display banner that HA was auto-subscribed to
         if (autoSubscribed) {
-          state.autoSubscription.bannerDismissed = false;
+          // state.autoSubscription.bannerDismissed = false;
           state.autoSubscription.selectedAuthority = authority;
         }
       },
